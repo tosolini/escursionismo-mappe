@@ -1,0 +1,65 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local environment and secrets
+.env
+.env.*
+*.local
+*.secret
+
+# Logs and runtime
+*.log
+logs/
+log/
+*.pid
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories
+node_modules/
+bower_components/
+vendor/
+
+# Build and coverage artifacts
+dist/
+build/
+coverage/
+.nyc_output/
+*.map
+
+# Package manager caches / lock temp
+.npm/
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Test / tooling caches
+.phpunit.result.cache
+.phpunit.cache/
+.cache/
+.eslintcache
+.stylelintcache
+
+# Archives and temp files
+*.zip
+*.tar
+*.gz
+*.tmp
+*.temp
+
+# Local WordPress runtime artifacts (when plugin is developed in-place)
+wp-content/uploads/
+
+# Explicit local file to ignore
+utput
+output
+output/
