@@ -1,0 +1,48 @@
+name: Bug report
+description: Segnala un malfunzionamento
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrizione
+      description: Descrivi chiaramente il problema
+      placeholder: Cosa succede?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passi per riprodurre
+      placeholder: |
+        1. Vai su ...
+        2. Clicca su ...
+        3. Vedi errore ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento atteso
+    validations:
+      required: true
+
+  - type: input
+    id: wp_version
+    attributes:
+      label: Versione WordPress
+      placeholder: 7.x
+
+  - type: input
+    id: php_version
+    attributes:
+      label: Versione PHP
+      placeholder: 8.x
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log / Screenshot
+      description: Incolla log o allega screenshot utili

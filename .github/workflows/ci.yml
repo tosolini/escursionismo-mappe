@@ -1,0 +1,45 @@
+name: CI
+
+on:
+    push:
+        branches: [main, master]
+    pull_request:
+        branches: [main, master]
+
+permissions:
+    contents: read
+
+jobs:
+    php-lint:
+        name: PHP Syntax Check
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: "8.2"
+
+            - name: Lint PHP files
+              run: |
+                  set -e
+                  find . -type f -name "*.php" -not -path "*/vendor/*" -print0 | xargs -0 -n1 php -l
+
+    js-lint:
+        name: JavaScript Syntax Check
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20"
+
+            - name: Check JS syntax
+              run: |
+                  set -e
+                  find assets -type f -name "*.js" -print0 | xargs -0 -n1 node --check
